@@ -23,7 +23,7 @@ if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 # Use DATABASE_URL from .env
-database_url = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5433/daily_tracker")
+database_url = os.getenv("DATABASE_URL", "postgresql://postgres:dev_password@postgres:5434/daily_tracker")
 config.set_main_option("sqlalchemy.url", database_url)
 
 target_metadata = Base.metadata

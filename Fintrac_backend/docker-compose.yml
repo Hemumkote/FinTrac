@@ -6,7 +6,7 @@ services:
     container_name: fintrac_database
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: dev_password
       POSTGRES_DB: daily_tracker
     ports:
       - "5434:5432"
@@ -42,8 +42,12 @@ services:
     container_name: fintrac_backend
     env_file:
       - .env
+    environment:
+      # Override for Docker network (use service name, not localhost)
+      DATABASE_URL: postgresql+asyncpg://postgres:dev_password@postgres:5432/daily_tracker
+      REDIS_URL: redis://redis:6379/0
     ports:
-      - "8000:8000"
+      - "8004:8000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -51,7 +55,7 @@ services:
         condition: service_healthy
     volumes:
       - ./:/app
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8004 --reload --reload-dir app
     working_dir: /app
     stdin_open: true
     tty: true

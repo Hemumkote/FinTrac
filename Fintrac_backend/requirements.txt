@@ -12,10 +12,9 @@ pydantic-settings
 sqlalchemy
 alembic
 
-# PostgreSQL driver (choose ONE)
+# PostgreSQL drivers
 psycopg2-binary
-# async alternative:
-# asyncpg
+asyncpg
 
 # Security
 passlib[bcrypt]
