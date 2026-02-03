@@ -1,0 +1,25 @@
+fastapi
+uvicorn[standard]
+
+# Environment
+python-dotenv
+
+# Validation & Settings
+pydantic
+pydantic-settings
+
+# Database (SQLAlchemy)
+sqlalchemy
+alembic
+
+# PostgreSQL driver (choose ONE)
+psycopg2-binary
+# async alternative:
+# asyncpg
+
+# Security
+passlib[bcrypt]
+python-jose[cryptography]
+
+# Utilities
+email-validator
