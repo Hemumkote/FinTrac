@@ -16,14 +16,16 @@ from app.db.base import Base
 from app.models.user import User
 from app.models.user_profile import UserProfile
 from app.models.user_settings import UserSettings
+from app.models.category import Category
 
 config = context.config
 
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# Use DATABASE_URL from .env
+# Use DATABASE_URL from .env, replacing async driver with sync for Alembic
 database_url = os.getenv("DATABASE_URL", "postgresql://postgres:dev_password@postgres:5434/daily_tracker")
+database_url = database_url.replace("postgresql+asyncpg://", "postgresql://")
 config.set_main_option("sqlalchemy.url", database_url)
 
 target_metadata = Base.metadata

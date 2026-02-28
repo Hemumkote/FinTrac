@@ -22,3 +22,7 @@ python-jose[cryptography]
 
 # Utilities
 email-validator
+
+# mcp servers
+mcp
+fastmcp

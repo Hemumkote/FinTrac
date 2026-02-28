@@ -787,9 +787,9 @@ services:
     environment:
       DATABASE_URL: postgresql://tracker_user:dev_password@postgres:5434/daily_tracker
       REDIS_URL: redis://redis:6379/0
-      JWT_SECRET: your_secret_key
+      JWT_SECRET: 9af91824eb3385305e0f89e2c4e259991a5f900eafa8a4ab6f992383f70dd712
     ports:
-      - "8004:8000"
+      - "8009:8000"
     depends_on:
       - postgres
       - redis
@@ -803,7 +803,7 @@ services:
     ports:
       - "8081:8081"
     environment:
-      API_URL: http://backend:8004/api
+      API_URL: http://backend:8009/api
     depends_on:
       - backend
     volumes:
@@ -832,6 +832,7 @@ REDIS_URL=redis://:password@cache-host:6379/0
 JWT_SECRET=very_secure_secret_key
 JWT_ALGORITHM=HS256
 JWT_EXPIRY_HOURS=24
+JWT_EXPIRY_MINUTES=10
 ENVIRONMENT=production
 LOG_LEVEL=info
 SENTRY_DSN=https://...

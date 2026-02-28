@@ -1,10 +1,10 @@
-# Daily Tracker - UI/UX Design Specification
+# FinTrac - UI/UX Design Specification
 
 ## Mobile App Design Document
 
-**Version:** 1.0  
-**Date:** January 22, 2026  
-**Design Inspiration:** Modern Progress Tracking App Aesthetics  
+**Version:** 1.1
+**Date:** February 10, 2026
+**Design Inspiration:** Modern Finance Tracking App Aesthetics
 **Platform:** React Native (iOS & Android)
 
 ---
@@ -40,11 +40,11 @@
 
 **Modern & Professional**
 
-- Clean, contemporary interface inspired by construction/project tracking apps
+- Clean, contemporary interface inspired by modern finance apps
 - Card-based layouts with generous white space
 - Subtle shadows and depth for visual hierarchy
 
-**Productivity-Focused**
+**Finance-Focused**
 
 - Quick access to frequent actions via FAB (Floating Action Button)
 - Minimal taps to complete core tasks
@@ -52,12 +52,12 @@
 
 ### 1.2 Design Inspiration Elements
 
-Inspired by modern progress tracking applications, our design incorporates:
+Inspired by modern finance tracking applications, our design incorporates:
 
 - **Card-Based Layout:** Information grouped in rounded cards with subtle shadows
 - **Bold Typography:** Clear headers with strong visual hierarchy
-- **Progress Visualization:** Circular progress indicators, timeline views, horizontal bars
-- **Color Psychology:** Strategic use of color to convey status and category
+- **Progress Visualization:** Circular progress indicators, budget bars, horizontal bars
+- **Color Psychology:** Strategic use of color to convey income, expense, and status
 - **Clean Navigation:** Bottom tab bar with clear iconography
 - **Data-Rich Dashboards:** Multiple metrics visible at a glance without overwhelming
 
@@ -71,8 +71,8 @@ Inspired by modern progress tracking applications, our design incorporates:
 
 **Primary Blue** - `#2563EB`
 
-- Usage: Primary actions, active states, timer running
-- Represents: Productivity, trust, focus
+- Usage: Primary actions, active states, navigation highlights
+- Represents: Trust, focus, reliability
 - Accessibility: WCAG AAA compliant on white
 
 **Secondary Blue** - `#60A5FA`
@@ -88,12 +88,12 @@ Inspired by modern progress tracking applications, our design incorporates:
 
 **Success Green** - `#10B981`
 
-- Usage: Income, completed tasks, positive trends
+- Usage: Income, positive balance, under-budget indicators
 - Icon: ✓ checkmarks, upward arrows
 
 **Warning Yellow/Amber** - `#F59E0B`
 
-- Usage: Budget warnings (75% spent), upcoming deadlines
+- Usage: Budget warnings (75% spent), upcoming due dates
 - Icon: ⚠ alerts, reminders
 
 **Danger Red** - `#EF4444`
@@ -111,27 +111,27 @@ Inspired by modern progress tracking applications, our design incorporates:
 
 #### Category Colors (Predefined Palette)
 
-**Work Categories:**
-
-- Deep Work: `#6366F1` (Indigo)
-- Meetings: `#8B5CF6` (Purple)
-- Admin/Email: `#EC4899` (Pink)
-- Client Calls: `#14B8A6` (Teal)
-
-**Personal Categories:**
-
-- Exercise: `#10B981` (Green)
-- Learning: `#F59E0B` (Amber)
-- Leisure: `#3B82F6` (Blue)
-- Rest: `#6B7280` (Gray)
-
 **Expense Categories:**
 
-- Food: `#F97316` (Orange)
+- Food & Dining: `#F97316` (Orange)
 - Housing: `#7C3AED` (Violet)
 - Transport: `#0EA5E9` (Sky)
 - Shopping: `#EC4899` (Pink)
 - Entertainment: `#8B5CF6` (Purple)
+- Utilities: `#06B6D4` (Cyan)
+- Healthcare: `#EF4444` (Red)
+- Education: `#F59E0B` (Amber)
+- Subscriptions: `#6366F1` (Indigo)
+- Groceries: `#10B981` (Green)
+
+**Income Categories:**
+
+- Salary: `#10B981` (Green)
+- Freelance: `#3B82F6` (Blue)
+- Investments: `#6366F1` (Indigo)
+- Business: `#14B8A6` (Teal)
+- Gifts: `#EC4899` (Pink)
+- Other Income: `#6B7280` (Gray)
 
 #### Neutral Colors
 
@@ -217,12 +217,12 @@ Inspired by modern progress tracking applications, our design incorporates:
 - Color: `#6B7280`
 - Usage: Timestamps, metadata
 
-**Numeric Display (Amounts, Duration):**
+**Numeric Display (Amounts):**
 
 - Font Size: Variable (18-32px based on context)
 - Font Weight: Semibold (600)
 - Font Variant: Tabular numbers
-- Usage: Money amounts, time duration
+- Usage: Money amounts, percentages
 
 ### 2.3 Spacing System
 
@@ -302,7 +302,7 @@ shadow:
 │                         │
 │       [App Logo]        │
 │                         │
-│     Daily Tracker       │
+│       FinTrac           │
 │                         │
 │  [Loading Indicator]    │
 │                         │
@@ -314,7 +314,7 @@ shadow:
 
 - App logo: 120x120px, centered
 - App name: Display font, 32px, centered below logo
-- Tagline (optional): "Track Time. Manage Money."
+- Tagline (optional): "Smart Money Management."
 - Loading spinner: Small, below tagline
 - Background: Gradient from Primary Blue to Secondary Blue
 
@@ -331,30 +331,29 @@ shadow:
 │    [Skip]          1/3  │
 │                         │
 │   [Illustration]        │
-│   Time Tracking         │
+│   Track Your Money      │
 │                         │
-│   Track your daily      │
-│   activities with       │
-│   simple timers and     │
-│   manual entries        │
+│   Log income, expenses, │
+│   and track your        │
+│   financial health      │
 │                         │
 │   ● ○ ○                 │
 │        [Next →]         │
 └─────────────────────────┘
 ```
 
-**Slide 2: Finance**
+**Slide 2: Budgets & Debts**
 
 ```
 ┌─────────────────────────┐
 │    [Skip]          2/3  │
 │                         │
 │   [Illustration]        │
-│   Money Management      │
+│   Budgets & Debts       │
 │                         │
-│   Log income, expenses, │
-│   debts, and track your │
-│   financial health      │
+│   Set spending limits,  │
+│   manage debts, and     │
+│   stay on top of bills  │
 │                         │
 │   ○ ● ○                 │
 │        [Next →]         │
@@ -370,9 +369,10 @@ shadow:
 │   [Illustration]        │
 │   Powerful Insights     │
 │                         │
-│   Visualize patterns,   │
-│   export reports, and   │
-│   achieve your goals    │
+│   Visualize spending    │
+│   patterns, export      │
+│   reports, and achieve  │
+│   your financial goals  │
 │                         │
 │   ○ ○ ●                 │
 │     [Get Started]       │
@@ -393,51 +393,52 @@ shadow:
 
 **Navigation:** Bottom Tab Bar > Home Icon (active)
 
-**Purpose:** Overview of today's activity and quick actions
+**Purpose:** Overview of financial status and quick actions
 
 **Layout:**
 
 ```
 ┌─────────────────────────────┐
-│ ☰  Daily Tracker      [👤]  │ ← Header
+│ ☰  FinTrac            [👤]  │ ← Header
 ├─────────────────────────────┤
 │                             │
 │ ┌─────────────────────────┐ │
-│ │ Today - Jan 22, 2026    │ │ ← Date Header
+│ │ Today - Feb 10, 2026    │ │ ← Date Header
 │ └─────────────────────────┘ │
 │                             │
-│ ┌─── Time Summary ────────┐ │
-│ │ ⏱️  4h 35m tracked      │ │
-│ │                         │ │
-│ │ [■■■■■■░░░░] 46%       │ │ ← Progress bar
-│ │ Target: 10h/day         │ │
-│ │                         │ │
-│ │ Top: Deep Work (2h 15m) │ │
+│ ┌─── Balance Overview ───┐  │
+│ │ Current Balance         │  │
+│ │                         │  │
+│ │    ₹12,450              │  │ ← Large green
+│ │                         │  │
+│ │ ↗️ Income:  ₹5,000     │  │
+│ │ ↘️ Expense: ₹2,340     │  │
+│ │                         │  │
+│ │ Net: +₹2,660           │  │ ← Green color
 │ └─────────────────────────┘ │
 │                             │
-│ ┌─── Money Summary ───────┐ │
-│ │ 💰 Balance: ₹12,450    │ │
-│ │                         │ │
-│ │ ↗️ Income:  ₹5,000     │ │
-│ │ ↘️ Expense: ₹2,340     │ │
-│ │                         │ │
-│ │ Net: +₹2,660           │ │ ← Green color
+│ ┌─── Budget Alerts ──────┐  │
+│ │ 🔴 Transport    117%   │  │
+│ │ [██████████████] Over   │  │
+│ │                         │  │
+│ │ 🟡 Food        84%     │  │
+│ │ [████████████░] Warning │  │
 │ └─────────────────────────┘ │
 │                             │
-│ ┌─── Recent Activity ─────┐ │
-│ │ 🔵 Deep Work  2h 15m    │ │
-│ │    09:00 - 11:15        │ │
-│ │                         │ │
-│ │ 💳 Groceries  -₹450    │ │
-│ │    11:30 AM             │ │
-│ │                         │ │
-│ │ [View All →]            │ │
+│ ┌─── Recent Transactions ┐  │
+│ │ 🍔 Groceries  -₹450    │  │
+│ │    11:30 AM             │  │
+│ │                         │  │
+│ │ 💼 Freelance   +₹5,000 │  │
+│ │    09:00 AM             │  │
+│ │                         │  │
+│ │ [View All →]            │  │
 │ └─────────────────────────┘ │
 │                             │
 └─────────────────────────────┘
          [+]  ← FAB
 ┌──────────────────────────────┐
-│ [🏠] [⏱️] [💰] [📊] [⚙️]   │ ← Bottom Nav
+│ [🏠] [💰] [📊] [⚙️]         │ ← Bottom Nav
 └──────────────────────────────┘
 ```
 
@@ -446,7 +447,7 @@ shadow:
 - Height: 56px
 - Background: White (light mode) / `#1E293B` (dark mode)
 - Left: Hamburger menu icon (24px) - Opens drawer
-- Center: "Daily Tracker" (H2 font)
+- Center: "FinTrac" (H2 font)
 - Right: Profile avatar (32px circle)
 - Shadow: Elevation 1
 
@@ -456,38 +457,34 @@ shadow:
 - "Today - [Date]" in Body font
 - Tap to open date picker
 
-**Time Summary Card:**
+**Balance Overview Card:**
 
 - Margin: 8px horizontal, 4px vertical
 - Padding: 16px
 - Border radius: 12px
 - Background: White / `#1E293B`
 - Shadow: Elevation 1
-
-**Content:**
-
-- Icon + Duration: Large numeric font (24px)
-- Progress bar: 8px height, rounded, gradient fill
-- Percentage: Caption font, aligned right
-- Target text: Body Small, gray color
-- Top category: Tappable, shows category color dot
-
-**Money Summary Card:**
-
-- Same card styling as Time Summary
 - Balance: Large font (28px), bold
 - Green if positive, red if negative
 - Income/Expense: Icons with arrows, aligned left
 - Net: Bold, color-coded
 
-**Recent Activity Card:**
+**Budget Alerts Card:**
 
-- List of 2-3 latest entries (time or finance)
+- Shows budgets at warning (75%+) or over budget (100%+)
+- Each budget: Category name, percentage, progress bar
+- Color-coded: Yellow for warning, Red for over
+- Tap: Navigate to Budgets screen
+- Hidden if no alerts
+
+**Recent Transactions Card:**
+
+- List of 3-5 latest transactions
 - Each entry:
-  - Left: Category color dot (12px circle) or transaction icon
-  - Title: Category name, H3 font
-  - Subtitle: Time range or timestamp, Caption font
-  - Right: Duration or amount, aligned right
+  - Left: Category color dot (12px circle) or category icon
+  - Title: Description or category name, H3 font
+  - Subtitle: Timestamp, Caption font
+  - Right: Amount, color-coded (green +, red -)
 - "View All" button at bottom
 
 **FAB (Floating Action Button):**
@@ -503,7 +500,7 @@ shadow:
 
 - Height: 60px (iOS), 56px (Android)
 - Background: White / `#1E293B`
-- 5 tabs evenly spaced
+- 4 tabs evenly spaced
 - Icons: 24px, with labels (10px font)
 - Active: Primary Blue, filled icon
 - Inactive: Gray, outline icon
@@ -511,10 +508,9 @@ shadow:
 **Tabs:**
 
 1. Home (🏠)
-2. Time (⏱️)
-3. Finance (💰)
-4. Analytics (📊)
-5. Settings (⚙️)
+2. Finance (💰)
+3. Analytics (📊)
+4. Settings (⚙️)
 
 ---
 
@@ -531,19 +527,15 @@ shadow:
 │ Quick Actions               │
 │                             │
 │ ┌─────────────────────────┐ │
-│ │ ⏱️  Start Timer         │ │
-│ └─────────────────────────┘ │
-│                             │
-│ ┌─────────────────────────┐ │
-│ │ 📝  Add Time Entry      │ │
-│ └─────────────────────────┘ │
-│                             │
-│ ┌─────────────────────────┐ │
 │ │ ➕  Add Income          │ │
 │ └─────────────────────────┘ │
 │                             │
 │ ┌─────────────────────────┐ │
 │ │ ➖  Add Expense         │ │
+│ └─────────────────────────┘ │
+│                             │
+│ ┌─────────────────────────┐ │
+│ │ 💳  Record Debt/Credit  │ │
 │ └─────────────────────────┘ │
 │                             │
 │        [Cancel]             │
@@ -570,250 +562,7 @@ shadow:
 
 ---
 
-### 3.5 Time Tracking Screen
-
-**Navigation:** Bottom Tab Bar > Time Icon
-
-**Layout:**
-
-```
-┌─────────────────────────────┐
-│ Time Tracking         [⚡️]  │ ← Quick Log icon
-├─────────────────────────────┤
-│                             │
-│ [Today ▼]  [Filter]         │ ← Date + Filter
-│                             │
-│ ┌─ Currently Tracking ────┐ │
-│ │ 🔵 Deep Work            │ │
-│ │                         │ │
-│ │     01:24:35            │ │ ← Large timer
-│ │                         │ │
-│ │  [⏸️ Pause]  [⏹️ Stop]  │ │
-│ └─────────────────────────┘ │
-│                             │
-│ Wednesday, Jan 22           │
-│ Total: 4h 35m               │
-│                             │
-│ ┌─────────────────────────┐ │
-│ │ 11:15 AM - 01:30 PM     │ │
-│ │ 🟣 Meetings             │ │
-│ │ Duration: 2h 15m        │ │
-│ │ Notes: Team standup...  │ │
-│ │               [Edit] [⋮]│ │
-│ └─────────────────────────┘ │
-│                             │
-│ ┌─────────────────────────┐ │
-│ │ 09:00 AM - 11:15 AM     │ │
-│ │ 🔵 Deep Work            │ │
-│ │ Duration: 2h 15m        │ │
-│ │               [Edit] [⋮]│ │
-│ └─────────────────────────┘ │
-│                             │
-│        [Load More]          │
-│                             │
-└─────────────────────────────┘
-         [+]
-┌──────────────────────────────┐
-│ [🏠] [⏱️] [💰] [📊] [⚙️]   │
-└──────────────────────────────┘
-```
-
-**Header:**
-
-- "Time Tracking" title
-- Right: Lightning icon for Quick Log
-
-**Date Selector:**
-
-- Dropdown showing selected date
-- Tap to open calendar picker
-- Today, Yesterday, This Week quick options
-
-**Filter Button:**
-
-- Opens filter modal
-- Filter by category, date range
-
-**Currently Tracking Card (Conditional):**
-
-- Only shown if timer is active
-- Card with subtle pulsing border animation
-- Category name with color dot
-- Large timer display (32px numeric font)
-- Tabular numbers for smooth counting
-- Two buttons:
-  - Pause: Outline style
-  - Stop: Filled style, Primary Blue
-
-**Date Divider:**
-
-- Day name + date, Caption font
-- Total duration for the day, aligned right
-- Subtle horizontal line below
-
-**Time Entry Cards:**
-
-- Time range: Caption font, gray
-- Category: H3 font, with colored dot
-- Duration: Body font, bold
-- Notes (if present): Body Small, truncated to 1 line
-- Right: Edit button + More menu (⋮)
-
-**More Menu Options:**
-
-- Edit
-- Duplicate
-- Delete
-
-**Empty State:**
-
-```
-┌─────────────────────────┐
-│                         │
-│      [⏱️ Icon]          │
-│                         │
-│  No time tracked yet    │
-│                         │
-│  Tap + to start         │
-│  tracking your day      │
-│                         │
-└─────────────────────────┘
-```
-
----
-
-### 3.6 Start Timer Screen
-
-**Trigger:** Quick Action > Start Timer OR FAB on Time tab
-
-**Layout:**
-
-```
-┌─────────────────────────────┐
-│ ← Start Timer               │
-├─────────────────────────────┤
-│                             │
-│ Select Category             │
-│                             │
-│ [🔍 Search categories]      │
-│                             │
-│ ┌─ Recent ────────────────┐ │
-│ │ 🔵 Deep Work            │ │
-│ │ 🟣 Meetings             │ │
-│ │ 🟢 Exercise             │ │
-│ └─────────────────────────┘ │
-│                             │
-│ ┌─ Work ──────────────────┐ │
-│ │ 🔵 Deep Work            │ │
-│ │ 🟣 Meetings             │ │
-│ │ 📧 Email & Admin        │ │
-│ │ 📞 Client Calls         │ │
-│ └─────────────────────────┘ │
-│                             │
-│ ┌─ Personal ──────────────┐ │
-│ │ 🟢 Exercise             │ │
-│ │ 📚 Learning             │ │
-│ │ 🎮 Leisure              │ │
-│ └─────────────────────────┘ │
-│                             │
-│ [+ Create Custom Category]  │
-│                             │
-└─────────────────────────────┘
-```
-
-**Design Specs:**
-
-- Search bar: Sticky at top, with magnifying glass icon
-- Categories grouped by parent
-- Each category:
-  - Color dot (12px)
-  - Name (H3 font)
-  - Tap entire row to select
-  - Selected: Blue background tint
-  - Animation: Scale slightly on tap
-
-**After Selection:**
-
-- Timer starts immediately
-- Navigate to Time Tracking screen
-- Show "Currently Tracking" card
-- Notification appears
-
----
-
-### 3.7 Manual Time Entry Screen
-
-**Trigger:** Quick Action > Add Time Entry
-
-**Layout:**
-
-```
-┌─────────────────────────────┐
-│ ← Add Time Entry      [Save]│
-├─────────────────────────────┤
-│                             │
-│ Category *                  │
-│ ┌─────────────────────────┐ │
-│ │ 🔵 Deep Work        [▼] │ │
-│ └─────────────────────────┘ │
-│                             │
-│ Date *                      │
-│ ┌─────────────────────────┐ │
-│ │ Jan 22, 2026        [📅]│ │
-│ └─────────────────────────┘ │
-│                             │
-│ Start Time *                │
-│ ┌─────────────────────────┐ │
-│ │ 09:00 AM            [🕐]│ │
-│ └─────────────────────────┘ │
-│                             │
-│ End Time *                  │
-│ ┌─────────────────────────┐ │
-│ │ 11:15 AM            [🕐]│ │
-│ └─────────────────────────┘ │
-│                             │
-│ Duration: 2h 15m            │
-│                             │
-│ Notes (Optional)            │
-│ ┌─────────────────────────┐ │
-│ │                         │ │
-│ │                         │ │
-│ │                         │ │
-│ └─────────────────────────┘ │
-│                             │
-│                             │
-└─────────────────────────────┘
-```
-
-**Field Design:**
-
-- Label: Body Small, gray, 8px margin bottom
-- Input: 48px height, border radius 8px
-- Border: 1px `#D1D5DB`, focus: 2px Primary Blue
-- Padding: 12px horizontal
-- Right icon: 20px, gray
-
-**Duration Display:**
-
-- Auto-calculated from start/end times
-- Bold font, Primary Blue color
-- Updates in real-time as times change
-
-**Validation:**
-
-- End time must be after start time
-- Red border + error message if invalid
-- Save button disabled until valid
-
-**Save Button:**
-
-- Top right header
-- Text style, Primary Blue when enabled
-- Gray when disabled
-
----
-
-### 3.8 Finance Screen
+### 3.5 Finance Screen
 
 **Navigation:** Bottom Tab Bar > Finance Icon
 
@@ -835,7 +584,7 @@ shadow:
 │ [All] [Income] [Expense]    │
 │ [Debt] [Credit]             │ ← Filter chips
 │                             │
-│ Today - Jan 22              │
+│ Today - Feb 10              │
 │                             │
 │ ┌─────────────────────────┐ │
 │ │ 🍔 Groceries            │ │
@@ -851,7 +600,7 @@ shadow:
 │ │              +₹5,000    │ │ ← Green
 │ └─────────────────────────┘ │
 │                             │
-│ Yesterday - Jan 21          │
+│ Yesterday - Feb 9           │
 │                             │
 │ ┌─────────────────────────┐ │
 │ │ ⚡ Electricity Bill     │ │
@@ -893,11 +642,12 @@ shadow:
 
 **Date Dividers:**
 
-- Same style as Time Tracking screen
+- Day name + date, Caption font, uppercase
+- Subtle horizontal line below
 
 ---
 
-### 3.9 Add Transaction Screen
+### 3.6 Add Transaction Screen
 
 **Trigger:** Quick Action > Add Income/Expense OR FAB on Finance tab
 
@@ -924,7 +674,7 @@ shadow:
 │                             │
 │ Date *                      │
 │ ┌─────────────────────────┐ │
-│ │ Jan 22, 2026        [📅]│ │
+│ │ Feb 10, 2026        [📅]│ │
 │ └─────────────────────────┘ │
 │                             │
 │ Payment Method              │
@@ -932,9 +682,14 @@ shadow:
 │ │ Credit Card         [▼] │ │
 │ └─────────────────────────┘ │
 │                             │
-│ Notes                       │
+│ Description                 │
 │ ┌─────────────────────────┐ │
 │ │ Monthly groceries       │ │
+│ └─────────────────────────┘ │
+│                             │
+│ Notes                       │
+│ ┌─────────────────────────┐ │
+│ │                         │ │
 │ └─────────────────────────┘ │
 │                             │
 │ [📷 Add Receipt]            │
@@ -972,7 +727,7 @@ shadow:
 
 ---
 
-### 3.10 Analytics Screen
+### 3.7 Analytics Screen
 
 **Navigation:** Bottom Tab Bar > Analytics Icon
 
@@ -985,38 +740,40 @@ shadow:
 │                             │
 │ [This Week ▼]              │ ← Period selector
 │                             │
-│ ┌─ Time Overview ─────────┐ │
-│ │                         │ │
-│ │   Total Tracked         │ │
-│ │      32.5h              │ │ ← Large number
-│ │                         │ │
-│ │   ↑ 12% vs last week    │ │
-│ │                         │ │
-│ │ [Pie Chart]             │ │
-│ │                         │ │
-│ │ 🔵 Deep Work    45%     │ │
-│ │ 🟣 Meetings     30%     │ │
-│ │ 🟢 Exercise     15%     │ │
-│ │ 🎮 Other        10%     │ │
+│ ┌─ Income vs Expense ────┐  │
+│ │                         │  │
+│ │   Net Savings           │  │
+│ │      +₹6,550            │  │ ← Large number
+│ │                         │  │
+│ │   ↑ 12% vs last week    │  │
+│ │                         │  │
+│ │ [Bar Chart]             │  │
+│ │  ↗️ ₹15,000 Income     │  │
+│ │  ↘️ ₹8,450 Expense     │  │
 │ └─────────────────────────┘ │
 │                             │
-│ ┌─ Money Overview ────────┐ │
-│ │                         │ │
-│ │  Income vs Expense      │ │
-│ │                         │ │
-│ │ [Bar Chart]             │ │
-│ │  ↗️ ₹15,000 Income     │ │
-│ │  ↘️ ₹8,450 Expense     │ │
-│ │  💰 ₹6,550 Net         │ │
-│ │                         │ │
-│ │ Top Expense: Food ₹2.3k │ │
+│ ┌─ Expense Breakdown ────┐  │
+│ │                         │  │
+│ │ [Pie Chart]             │  │
+│ │                         │  │
+│ │ 🍔 Food        35%     │  │
+│ │ 🏠 Housing     25%     │  │
+│ │ 🚗 Transport   20%     │  │
+│ │ 🎮 Other       20%     │  │
 │ └─────────────────────────┘ │
 │                             │
-│ ┌─ Weekly Trend ──────────┐ │
-│ │                         │ │
-│ │ [Line Graph]            │ │
-│ │ Hours tracked per day   │ │
-│ │                         │ │
+│ ┌─ Spending Trend ───────┐  │
+│ │                         │  │
+│ │ [Line Graph]            │  │
+│ │ Daily spending this week│  │
+│ │                         │  │
+│ └─────────────────────────┘ │
+│                             │
+│ ┌─ Budget Status ────────┐  │
+│ │ 🔴 Transport    117%   │  │
+│ │ 🟡 Food         84%    │  │
+│ │ 🟢 Shopping     53%    │  │
+│ │ [View All Budgets →]   │  │
 │ └─────────────────────────┘ │
 │                             │
 └─────────────────────────────┘
@@ -1028,32 +785,32 @@ shadow:
 - Prominent at top
 - All data below updates based on selection
 
-**Overview Cards:**
+**Income vs Expense Card:**
 
-- Large metric display (32px font)
+- Large net savings display (32px font)
 - Comparison to previous period with arrow and percentage
-- Color-coded: Green for increase, Red for decrease
+- Color-coded: Green for positive, Red for negative
+- Bar chart: Dual bars for Income (Green) vs Expense (Red)
 
-**Pie Chart:**
+**Expense Breakdown Card:**
 
+- Pie/Donut chart
 - Interactive: Tap slice to drill down
 - Legend below with percentages
 - Top 4 categories, rest grouped as "Other"
 - Vibrant category colors
 
-**Bar Chart:**
+**Spending Trend Card:**
 
-- Dual bars for Income (Green) vs Expense (Red)
-- Y-axis: Amount
-- X-axis: Days/Weeks/Months based on period
-- Net shown below in bold
-
-**Line Graph:**
-
-- Smooth curved line
-- Gradient fill below line
+- Line graph showing daily/weekly spending
+- Smooth curved line with gradient fill
 - Data points: Tappable to show exact value
-- Grid lines for easier reading
+
+**Budget Status Card:**
+
+- Quick summary of active budgets
+- Color-coded progress bars
+- "View All Budgets" link
 
 **Export Button:**
 
@@ -1062,51 +819,50 @@ shadow:
 
 ---
 
-### 3.11 Analytics Detail Screen (Drill-down)
+### 3.8 Analytics Detail Screen (Drill-down)
 
-**Trigger:** Tap on pie chart slice or "View Details" button
+**Trigger:** Tap on pie chart slice or category in analytics
 
 **Layout:**
 
 ```
 ┌─────────────────────────────┐
-│ ← Deep Work Analytics       │
+│ ← Food & Dining Analytics   │
 ├─────────────────────────────┤
 │                             │
 │ This Week                   │
 │                             │
 │ ┌─────────────────────────┐ │
-│ │   Total Time            │ │
-│ │     14.5h               │ │
+│ │   Total Spent            │ │
+│ │     ₹2,950               │ │
 │ │                         │ │
-│ │   45% of total time     │ │
-│ │   ↑ 2.5h vs last week   │ │
+│ │   35% of total expenses │ │
+│ │   ↑ ₹450 vs last week  │ │
 │ └─────────────────────────┘ │
 │                             │
 │ ┌─ Daily Breakdown ───────┐ │
 │ │                         │ │
-│ │ Mon  ████████  3.2h     │ │
-│ │ Tue  ██████    2.5h     │ │
-│ │ Wed  ██████████ 4.0h    │ │
-│ │ Thu  ████       1.8h    │ │
-│ │ Fri  ██████     2.5h    │ │
-│ │ Sat  ░░░░       0.5h    │ │
-│ │ Sun  ░░░░       0h       │ │
+│ │ Mon  ████████  ₹620     │ │
+│ │ Tue  ██████    ₹480     │ │
+│ │ Wed  ██████████ ₹780    │ │
+│ │ Thu  ████       ₹320    │ │
+│ │ Fri  ██████     ₹500    │ │
+│ │ Sat  ███        ₹250    │ │
+│ │ Sun  ░░░░       ₹0      │ │
 │ └─────────────────────────┘ │
 │                             │
-│ ┌─ Time Distribution ─────┐ │
-│ │ Morning (6-12)    4.5h  │ │
-│ │ Afternoon (12-6)  8.0h  │ │
-│ │ Evening (6-12)    2.0h  │ │
-│ │ Night (12-6)      0h     │ │
+│ ┌─ Payment Methods ──────┐  │
+│ │ UPI              ₹1,200 │  │
+│ │ Credit Card      ₹980   │  │
+│ │ Cash             ₹770   │  │
 │ └─────────────────────────┘ │
 │                             │
-│ ┌─ Recent Sessions ───────┐ │
-│ │ Today, 9:00 AM          │ │
-│ │ Duration: 2h 15m        │ │
-│ │                         │ │
-│ │ Yesterday, 2:30 PM      │ │
-│ │ Duration: 1h 45m        │ │
+│ ┌─ Recent Transactions ──┐  │
+│ │ Groceries - ₹450       │  │
+│ │ Today, 11:30 AM        │  │
+│ │                         │  │
+│ │ Restaurant - ₹780       │  │
+│ │ Yesterday, 7:30 PM     │  │
 │ └─────────────────────────┘ │
 │                             │
 └─────────────────────────────┘
@@ -1116,13 +872,14 @@ shadow:
 
 - Category color accent throughout
 - Horizontal bars for daily breakdown
-- Tappable sessions link to time entry detail
+- Payment method breakdown for additional insight
+- Tappable transactions link to transaction detail
 
 ---
 
-### 3.12 Budget Screen
+### 3.9 Budget Screen
 
-**Navigation:** Finance Tab > "Budgets" or Settings
+**Navigation:** Finance Tab > "Budgets" or Analytics > View All Budgets
 
 **Layout:**
 
@@ -1131,14 +888,14 @@ shadow:
 │ ← Budgets           [+ Add] │
 ├─────────────────────────────┤
 │                             │
-│ January 2026                │
+│ February 2026               │
 │                             │
 │ ┌─ Overall Budget ─────────┐ │
 │ │ ₹25,000 / ₹30,000       │ │
 │ │ [████████████░░] 83%    │ │
 │ │                         │ │
 │ │ ₹5,000 remaining        │ │
-│ │ 9 days left             │ │
+│ │ 18 days left             │ │
 │ └─────────────────────────┘ │
 │                             │
 │ ┌─ Food & Dining ─────────┐ │
@@ -1190,7 +947,7 @@ shadow:
 
 ---
 
-### 3.13 Debt/Credit Management Screen
+### 3.10 Debt/Credit Management Screen
 
 **Navigation:** Finance Tab > Filter > Debt/Credit
 
@@ -1221,7 +978,7 @@ shadow:
 │ │ ₹12,000 / ₹15,000       │ │
 │ │ [████████░░] 80%        │ │
 │ │                         │ │
-│ │ Due: Jan 15 (7 days ago)│ │
+│ │ Due: Jan 15 (26 days ago)│ │
 │ │ 🔴 OVERDUE              │ │
 │ │                         │ │
 │ │ [Pay Now] [View Details]│ │
@@ -1234,7 +991,7 @@ shadow:
 │ │ HDFC Bank               │ │
 │ │ ₹25,000 due             │ │
 │ │                         │ │
-│ │ Due: Jan 30 (8 days)    │ │
+│ │ Due: Feb 28 (18 days)   │ │
 │ │ 🟡 UPCOMING             │ │
 │ │                         │ │
 │ │ [Pay Now] [View Details]│ │
@@ -1261,7 +1018,7 @@ shadow:
 
 ---
 
-### 3.14 Settings Screen
+### 3.11 Settings Screen
 
 **Navigation:** Bottom Tab Bar > Settings Icon
 
@@ -1291,19 +1048,17 @@ shadow:
 │ Theme                       │
 │ System Default          [→] │
 │                             │
-│ TRACKING                    │
-│                             │
-│ Default Time Tracking Mode  │
-│ Timer                   [→] │
-│                             │
-│ Daily Tracking Reminder     │
-│ [Toggle ON] 8:00 PM     [→] │
-│                             │
 │ CATEGORIES                  │
 │                             │
-│ Manage Time Categories  [→] │
+│ View Categories          [→]│
 │                             │
-│ Manage Finance Categories[→]│
+│ NOTIFICATIONS               │
+│                             │
+│ Budget Alert Notifications  │
+│ [Toggle ON]             [→] │
+│                             │
+│ Due Date Reminders          │
+│ [Toggle ON]             [→] │
 │                             │
 │ DATA & BACKUP               │
 │                             │
@@ -1339,103 +1094,74 @@ shadow:
 
 ---
 
-### 3.15 Category Management Screen
+### 3.12 Category View Screen (Read-Only)
 
-**Trigger:** Settings > Manage Time/Finance Categories
+**Trigger:** Settings > View Expense/Income Categories
+
+**Note:** Categories are predefined and cannot be created, edited, or deleted by users.
+Users can only browse the available categories. Categories are managed via a backend seed script.
 
 **Layout:**
 
 ```
 ┌─────────────────────────────┐
-│ ← Time Categories    [+ Add]│
+│ ← Categories                │
 ├─────────────────────────────┤
 │                             │
-│ [Predefined] [Custom]       │ ← Tabs
+│ [All] [Expense] [Income]    │ <- Filter chips
 │                             │
-│ WORK                        │
+│ EXPENSE                     │
 │                             │
 │ ┌─────────────────────────┐ │
-│ │ 🔵 Deep Work            │ │
-│ │ Used 45 times       [⋮] │ │
+│ │ 🍔 Food & Dining        │ │
+│ │ #F97316                  │ │
 │ └─────────────────────────┘ │
 │                             │
 │ ┌─────────────────────────┐ │
-│ │ 🟣 Meetings             │ │
-│ │ Used 32 times       [⋮] │ │
-│ └─────────────────────────┘ │
-│                             │
-│ PERSONAL                    │
-│                             │
-│ ┌─────────────────────────┐ │
-│ │ 🟢 Exercise             │ │
-│ │ Used 18 times       [⋮] │ │
-│ └─────────────────────────┘ │
-│                             │
-│ CUSTOM                      │
-│                             │
-│ ┌─────────────────────────┐ │
-│ │ 🟠 Client: Acme Corp    │ │
-│ │ Used 67 times       [⋮] │ │
+│ │ 🏠 Housing              │ │
+│ │ #7C3AED                  │ │
 │ └─────────────────────────┘ │
 │                             │
 │ ┌─────────────────────────┐ │
-│ │ 🔴 Side Project         │ │
-│ │ Used 12 times       [⋮] │ │
+│ │ 🚗 Transport            │ │
+│ │ #0EA5E9                  │ │
+│ └─────────────────────────┘ │
+│                             │
+│ ┌─────────────────────────┐ │
+│ │ 🛍️ Shopping             │ │
+│ │ #EC4899                  │ │
+│ └─────────────────────────┘ │
+│                             │
+│ ┌─────────────────────────┐ │
+│ │ 🎮 Entertainment        │ │
+│ │ #8B5CF6                  │ │
+│ └─────────────────────────┘ │
+│                             │
+│ INCOME                      │
+│                             │
+│ ┌─────────────────────────┐ │
+│ │ 💼 Salary               │ │
+│ │ #10B981                  │ │
+│ └─────────────────────────┘ │
+│                             │
+│ ┌─────────────────────────┐ │
+│ │ 💻 Freelance            │ │
+│ │ #3B82F6                  │ │
 │ └─────────────────────────┘ │
 │                             │
 └─────────────────────────────┘
 ```
 
-**More Menu (⋮):**
+**Design Notes:**
 
-- Edit (color, icon, name)
-- Archive (for custom categories)
-- Delete (with reassignment prompt)
-- View Analytics
-
-**Add Category Modal:**
-
-```
-┌─────────────────────────────┐
-│ Create Category     [Cancel]│
-│                       [Save]│
-├─────────────────────────────┤
-│                             │
-│ Name *                      │
-│ ┌─────────────────────────┐ │
-│ │ My Category             │ │
-│ └─────────────────────────┘ │
-│                             │
-│ Color                       │
-│ ┌─────────────────────────┐ │
-│ │ 🔴🟠🟡🟢🔵🟣⚫⚪       │ │
-│ │ [Selected: 🔵]          │ │
-│ └─────────────────────────┘ │
-│                             │
-│ Icon                        │
-│ ┌─────────────────────────┐ │
-│ │ [🔍 Search icons]       │ │
-│ │                         │ │
-│ │ 💼📱⏰🎯📚🏃          │ │
-│ │ 🎨🎮🍔✈️🏠💰          │ │
-│ └─────────────────────────┘ │
-│                             │
-│ Parent Category (Optional)  │
-│ ┌─────────────────────────┐ │
-│ │ Work                [▼] │ │
-│ └─────────────────────────┘ │
-│                             │
-│ Preview                     │
-│ ┌─────────────────────────┐ │
-│ │ 🔵 My Category          │ │
-│ └─────────────────────────┘ │
-│                             │
-└─────────────────────────────┘
-```
+- No "Add" button - categories are predefined
+- No edit/delete actions - read-only view
+- Color dot indicator next to each category name
+- Filter chips to switch between All / Expense / Income
 
 ---
 
-### 3.16 Export Screen
+### 3.13 Export Screen
 
 **Trigger:** Analytics > Export OR Settings > Export All Data
 
@@ -1448,8 +1174,9 @@ shadow:
 │                             │
 │ Data Type                   │
 │ ┌─────────────────────────┐ │
-│ │ ☑️ Time Tracking        │ │
-│ │ ☑️ Financial Data       │ │
+│ │ ☑️ Transactions         │ │
+│ │ ☑️ Budgets              │ │
+│ │ ☑️ Debts & Credits      │ │
 │ └─────────────────────────┘ │
 │                             │
 │ Date Range                  │
@@ -1460,14 +1187,14 @@ shadow:
 │ Custom Range                │
 │ ┌───────────┬─────────────┐ │
 │ │ Start Date│  End Date   │ │
-│ │ Jan 1     │  Jan 22     │ │
+│ │ Feb 1     │  Feb 10     │ │
 │ └───────────┴─────────────┘ │
 │                             │
 │ Format                      │
 │ ┌─────────────────────────┐ │
 │ │ ○ CSV                   │ │
 │ │ ● PDF Report            │ │
-│ │ ○ JSON                  │ │
+│ │ ○ Excel                 │ │
 │ └─────────────────────────┘ │
 │                             │
 │ Options                     │
@@ -1493,7 +1220,7 @@ shadow:
 
 ---
 
-### 3.17 Recurring Transaction Setup
+### 3.14 Recurring Transaction Setup
 
 **Trigger:** Add Transaction > Toggle "Recurring"
 
@@ -1512,7 +1239,7 @@ shadow:
 │                             │
 │ Start Date                  │
 │ ┌─────────────────────────┐ │
-│ │ Jan 1, 2026         [📅]│ │
+│ │ Feb 1, 2026         [📅]│ │
 │ └─────────────────────────┘ │
 │                             │
 │ End Condition               │
@@ -1523,7 +1250,7 @@ shadow:
 │ └─────────────────────────┘ │
 │                             │
 │ Next Occurrence             │
-│ Feb 1, 2026                 │
+│ Mar 1, 2026                 │
 │                             │
 │ ☑️ Notify when created     │
 │                             │
@@ -1688,9 +1415,9 @@ shadow:
 - Border radius: 4px (rounded ends)
 - Background: `#E5E7EB`
 - Fill: Gradient based on status
-  - Green: On track
+  - Green: Under budget
   - Yellow: Warning
-  - Red: Over/Overdue
+  - Red: Over budget
 - Animated fill on load
 
 **Circular Progress (Pie Chart Style)**
@@ -1726,10 +1453,10 @@ shadow:
 - Height: 200px
 - Bar width: Variable (based on # of bars)
 - Gap between bars: 8px
-- Y-axis: Amount/Duration, auto-scaled
+- Y-axis: Amount, auto-scaled
 - X-axis: Time periods (days, weeks, months)
 - Grid lines: Horizontal only, subtle gray
-- Colors: Category colors or Income (green) / Expense (red)
+- Colors: Income (green) / Expense (red)
 - Hover/Tap: Show exact value in tooltip
 
 **Line Chart**
@@ -1821,10 +1548,10 @@ shadow:
 **Swipeable List Item**
 
 - Swipe left: Reveal actions (Edit, Delete)
-- Swipe right: Quick action (Mark complete, etc.)
+- Swipe right: Quick action (Mark paid, etc.)
 - Action button: 72px width, full height
 - Icons: 24px, centered
-- Colors: Blue (edit), Red (delete), Green (complete)
+- Colors: Blue (edit), Red (delete), Green (paid)
 
 ### 4.8 Date & Time Pickers
 
@@ -1834,13 +1561,6 @@ shadow:
 - Selected date: Highlighted in Primary Blue
 - Today: Outlined in blue
 - Quick options: Today, Yesterday, Start of Week/Month
-- Buttons: Cancel, Done
-
-**Time Picker**
-
-- Type: Clock/wheel based on platform
-- 12/24 hour: Based on device settings
-- Increment: 15 minutes (configurable)
 - Buttons: Cancel, Done
 
 **Date Range Picker**
@@ -1860,17 +1580,19 @@ shadow:
 │ [🔍 Search]                 │
 │                             │
 │ RECENT                      │
-│ 🔵 Deep Work                │
-│ 🟣 Meetings                 │
+│ 🍔 Food & Dining            │
+│ 🚗 Transport                │
 │                             │
-│ WORK                        │
-│ 🔵 Deep Work                │
-│ 🟣 Meetings                 │
-│ 📧 Email                    │
+│ ESSENTIALS                  │
+│ 🍔 Food & Dining            │
+│ 🏠 Housing                  │
+│ 🚗 Transport                │
+│ ⚡ Utilities                │
 │                             │
-│ PERSONAL                    │
-│ 🟢 Exercise                 │
-│ 📚 Learning                 │
+│ LIFESTYLE                   │
+│ 🛍️ Shopping                 │
+│ 🎮 Entertainment            │
+│ 📚 Education                │
 │                             │
 └─────────────────────────────┘
 ```
@@ -1895,10 +1617,10 @@ shadow:
 │       [Large Icon]          │
 │          128x128            │
 │                             │
-│   No entries yet            │
+│   No transactions yet       │
 │                             │
-│   Start tracking to see     │
-│   your data here            │
+│   Tap + to start tracking   │
+│   your finances             │
 │                             │
 │      [Get Started]          │
 │                             │
@@ -2172,7 +1894,7 @@ shadow:
 
 - Mobile: Full width inputs
 - Tablet: Max width 600px, centered
-- Two-column for related fields (start/end time)
+- Two-column for related fields (start/end date)
 
 **Lists**
 
@@ -2401,7 +2123,7 @@ shadow:
 
 **Design:**
 
-- Symbol: Stylized clock merged with rupee/dollar symbol
+- Symbol: Stylized rupee/dollar symbol with chart element
 - Background: Gradient Primary to Secondary Blue
 - Style: Rounded square (iOS), circle/square (Android)
 - No text in icon (doesn't scale well)
@@ -2423,17 +2145,18 @@ shadow:
 
 **Onboarding Illustrations:**
 
-- Time tracking: Person with timer/stopwatch
-- Finance: Person with wallet/charts
-- Insights: Person looking at dashboard
+- Finance tracking: Person with wallet/charts
+- Budgets: Person with budget dashboard
+- Insights: Person looking at analytics
+
 - Style: Flat, minimal, 2-3 colors max
 - Format: SVG for scalability
 
 **Empty States:**
 
-- Clock with magnifying glass (no time entries)
 - Wallet with magnifying glass (no transactions)
 - Chart with zero data (no analytics)
+- Piggy bank (no budgets set)
 - Style: Simple line art, 1-2 colors
 
 ### 9.4 Icons
@@ -2457,12 +2180,12 @@ shadow:
 
 ```
 ┌────────────────────────────────┐
-│ [App Logo]  Daily Tracker      │
+│ [App Logo]  FinTrac            │
 │                                │
-│ Time Tracking Report           │
-│ January 1 - January 22, 2026   │
+│ Financial Report               │
+│ February 1 - February 10, 2026│
 │                                │
-│ Generated: Jan 22, 2026        │
+│ Generated: Feb 10, 2026        │
 │ For: John Doe                  │
 └────────────────────────────────┘
 ```
@@ -2489,7 +2212,7 @@ shadow:
 **Organization:**
 
 - Pages: Overview, Screens, Components, Styles
-- Artboards named clearly (e.g., "Home - Default State")
+- Artboards named clearly (e.g., "Dashboard - Default State")
 - States: Default, Hover/Pressed, Disabled, Error
 - Variants for mobile/tablet
 
@@ -2552,7 +2275,7 @@ shadow:
 
 **Interactive Prototype:**
 
-- Key user flows: Onboarding, Add entry, View analytics
+- Key user flows: Onboarding, Add transaction, View analytics, Manage budgets
 - Transitions: Realistic navigation
 - States: Show interactions (button press, form validation)
 - Annotations: Explain complex interactions
@@ -2620,9 +2343,8 @@ shadow:
 
 **Widgets:**
 
-- Home screen widget showing today's stats
-- Lock screen widget for quick time tracking
-- Complication designs for Apple Watch
+- Home screen widget showing balance and recent transactions
+- Lock screen widget for quick expense entry
 
 **Collaboration Features:**
 
@@ -2636,12 +2358,13 @@ shadow:
 - Smart suggestions section on dashboard
 - Conversational UI for insights
 - Predictive analytics visualizations
+- Spending pattern detection
 
 **Integrations:**
 
 - Bank connection UI
-- Calendar sync settings
-- Third-party app connections
+- UPI auto-import settings
+- Third-party app connections (Google Pay, PhonePe)
 
 ### Accessibility Improvements
 
@@ -2654,7 +2377,7 @@ shadow:
 
 **iOS:**
 
-- Siri shortcuts
+- Siri shortcuts for adding expense
 - iMessage app for quick logging
 - Apple Watch app
 - iPad split-view support
@@ -2662,7 +2385,7 @@ shadow:
 **Android:**
 
 - Widget customization
-- Quick settings tile
+- Quick settings tile for expense entry
 - Wear OS app
 - Tablet multi-window support
 
@@ -2692,7 +2415,7 @@ shadow:
 
 **Inspiration:**
 
-- Dribbble: Finance & productivity app designs
+- Dribbble: Finance app designs
 - Mobbin: Mobile design patterns
 - Behance: UI/UX case studies
 
@@ -2711,29 +2434,30 @@ shadow:
 
 ### C. Design Version History
 
-**Version 1.0 (Current)**
+**Version 1.0**
 
 - Initial design specification
-- Core screens and components
-- Light and dark modes
-- Mobile-first responsive design
+- All screens including time tracking and finance
 
-**Planned for Version 1.1:**
+**Version 1.1 (Current)**
 
-- Tablet-optimized layouts
-- Advanced animations
-- Widget designs
-- Collaboration features UI
+- Focused on financial tracking only
+- Removed time tracking screens (timer, time entries)
+- Updated navigation from 5 tabs to 4 tabs
+- Updated dashboard to finance-only layout
+- Updated analytics to finance-only charts
+- Updated categories to income/expense types
+- Updated onboarding to finance-focused slides
 
 ---
 
 **End of Design Document**
 
-**Document Prepared By:** Design Team  
-**Date:** January 22, 2026  
-**Status:** Ready for Development  
+**Document Prepared By:** Design Team
+**Date:** February 10, 2026
+**Status:** Ready for Development
 **Next Review:** After MVP completion
 
 ---
 
-This comprehensive design specification provides the blueprint for building a modern, accessible, and user-friendly Daily Tracker application. All designs should be implemented with attention to detail, ensuring a consistent and delightful user experience across all platforms and use cases.
+This design specification provides the blueprint for building a modern, accessible, and user-friendly financial tracking application. All designs should be implemented with attention to detail, ensuring a consistent and delightful user experience across all platforms and use cases.

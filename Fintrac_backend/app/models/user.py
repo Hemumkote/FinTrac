@@ -32,3 +32,6 @@ class User(Base):
     settings: Mapped["UserSettings"] = relationship(
         back_populates="user", uselist=False, cascade="all, delete-orphan"
     )
+    transactions: Mapped[list["Transaction"]] = relationship(
+        back_populates="user", cascade="all, delete-orphan"
+    )

@@ -14,8 +14,6 @@ class UserProfile(Base):
     
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     user_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), unique=True, nullable=False)
-    first_name: Mapped[str] = mapped_column(String, nullable=True)
-    last_name: Mapped[str] = mapped_column(String, nullable=True)
     avatar_url: Mapped[str] = mapped_column(String, nullable=True)
     
     # Relationship

@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import ClassVar
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # Get the directory where this config file is located
@@ -10,13 +11,14 @@ class Settings(BaseSettings):
 
     # Database Configuration
     DATABASE_URL: str = (
-        "postgresql+asyncpg://postgres:dev_password@127.0.0.1:5434/daily_tracker"
+        "postgresql+asyncpg://postgres:dev_password@0.0.0.0:5434/daily_tracker"
     )
 
     # Security Configuration
-    JWT_SECRET: str = "your_secret_key_change_in_production"
+    JWT_SECRET: str = "9af91824eb3385305e0f89e2c4e259991a5f900eafa8a4ab6f992383f70dd712"
     JWT_ALGORITHM: str = "HS256"
-    JWT_EXPIRY_HOURS: int = 24
+    JWT_EXPIRY_HOURS: ClassVar[int] = 24
+    JWT_EXPIRY_MINUTES: ClassVar[int] = 10
 
     # Application Configuration
     APP_NAME: str = "Fintrac API"
